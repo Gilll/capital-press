@@ -1,0 +1,33 @@
+
+.icon-select {
+	width: 4.2rem;
+	height: 4.2rem;
+	border-radius: 50%;
+	border: 2px solid #47669D;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+}
+
+.icon-radio {
+	width: 2.4rem;
+	height: 2.4rem;
+	position: absolute;
+	margin-left: -3.2rem;
+	margin-top: -0.3rem;
+	transition: 0.3s;
+	transform: scale(0);
+	opacity: 0;
+}
+
+.icon-button {
+	width: 2.4rem;
+	height: 2.4rem;
+	position: absolute;
+	margin-left: 0.6rem;
+	margin-top: -0.5rem;
+}
