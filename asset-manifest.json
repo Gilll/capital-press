@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/capital-press/static/css/main.c850c11f.css",
+    "main.js": "/capital-press/static/js/main.47b37c6a.js",
+    "static/media/PragmaticaExtended-Bold.eot": "/capital-press/static/media/PragmaticaExtended-Bold.b204c9ba794e449a2a66.eot",
+    "static/media/PragmaticaExtended-Bold.ttf": "/capital-press/static/media/PragmaticaExtended-Bold.f5a813ddad15ca7d3b40.ttf",
+    "static/media/PragmaticaExtended-Book.eot": "/capital-press/static/media/PragmaticaExtended-Book.22f0fc39d9776b26fadb.eot",
+    "static/media/PragmaticaExtended-Book.ttf": "/capital-press/static/media/PragmaticaExtended-Book.eecab37a58203088b004.ttf",
+    "static/media/PragmaticaExtended-Black.eot": "/capital-press/static/media/PragmaticaExtended-Black.4a45a2ff6c83f5fdc31f.eot",
+    "static/media/PragmaticaExtended-Black.ttf": "/capital-press/static/media/PragmaticaExtended-Black.6e839e00dd2ec586c0a8.ttf",
+    "static/media/PragmaticaExtended-ExtraBold.eot": "/capital-press/static/media/PragmaticaExtended-ExtraBold.92d674af588ce9139753.eot",
+    "static/media/PragmaticaExtended-ExtraBold.ttf": "/capital-press/static/media/PragmaticaExtended-ExtraBold.c3fce4bad18af8b5906f.ttf",
+    "static/media/PragmaticaExtended-Medium.eot": "/capital-press/static/media/PragmaticaExtended-Medium.b05e9e3fc885f982f16e.eot",
+    "static/media/PragmaticaExtended-Medium.ttf": "/capital-press/static/media/PragmaticaExtended-Medium.8fb3f9e9b3fff9873f91.ttf",
+    "static/media/PragmaticaExtended-Light.eot": "/capital-press/static/media/PragmaticaExtended-Light.601958323f04022886aa.eot",
+    "static/media/PragmaticaExtended-Light.ttf": "/capital-press/static/media/PragmaticaExtended-Light.40aebb50daa1385f4dd3.ttf",
+    "static/media/PragmaticaExtended-ExtraLight.eot": "/capital-press/static/media/PragmaticaExtended-ExtraLight.998456515a84cf77325c.eot",
+    "static/media/PragmaticaExtended-ExtraLight.ttf": "/capital-press/static/media/PragmaticaExtended-ExtraLight.5ab036c471985af2f626.ttf",
+    "static/media/PragmaticaExtended-Bold.woff": "/capital-press/static/media/PragmaticaExtended-Bold.9f45571b98cb2e6da800.woff",
+    "static/media/PragmaticaExtended-Book.woff": "/capital-press/static/media/PragmaticaExtended-Book.51ffbc697b900dde00d6.woff",
+    "static/media/PragmaticaExtended-ExtraBold.woff": "/capital-press/static/media/PragmaticaExtended-ExtraBold.fd8438bc8b5b6c2c908e.woff",
+    "static/media/PragmaticaExtended-Black.woff": "/capital-press/static/media/PragmaticaExtended-Black.f802a47a806b2aa66860.woff",
+    "static/media/PragmaticaExtended-Medium.woff": "/capital-press/static/media/PragmaticaExtended-Medium.4ddaeeab4126f8f51678.woff",
+    "static/media/PragmaticaExtended-Light.woff": "/capital-press/static/media/PragmaticaExtended-Light.7a121087f5e85e0707e4.woff",
+    "static/media/PragmaticaExtended-ExtraLight.woff": "/capital-press/static/media/PragmaticaExtended-ExtraLight.f797467339bc6b8dbb37.woff",
+    "static/media/PragmaticaExtended-Bold.woff2": "/capital-press/static/media/PragmaticaExtended-Bold.9af360294ed81b43f41f.woff2",
+    "static/media/PragmaticaExtended-Book.woff2": "/capital-press/static/media/PragmaticaExtended-Book.983e09c49ef72c046b78.woff2",
+    "static/media/PragmaticaExtended-Black.woff2": "/capital-press/static/media/PragmaticaExtended-Black.668adaa83f36a86aa6bc.woff2",
+    "static/media/PragmaticaExtended-ExtraBold.woff2": "/capital-press/static/media/PragmaticaExtended-ExtraBold.6ec7cff6df8f277bbd25.woff2",
+    "static/media/PragmaticaExtended-Medium.woff2": "/capital-press/static/media/PragmaticaExtended-Medium.4ff96c5abef16853e0a2.woff2",
+    "static/media/PragmaticaExtended-Light.woff2": "/capital-press/static/media/PragmaticaExtended-Light.c33c8d1a647b304980be.woff2",
+    "static/media/PragmaticaExtended-ExtraLight.woff2": "/capital-press/static/media/PragmaticaExtended-ExtraLight.7f80828a98fd6276c908.woff2",
+    "index.html": "/capital-press/index.html",
+    "static/media/arrow-down-right.svg": "/capital-press/static/media/arrow-down-right.78eb3ccc1e95f9fe69f257113853c670.svg",
+    "main.c850c11f.css.map": "/capital-press/static/css/main.c850c11f.css.map",
+    "main.47b37c6a.js.map": "/capital-press/static/js/main.47b37c6a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c850c11f.css",
+    "static/js/main.47b37c6a.js"
+  ]
+}
