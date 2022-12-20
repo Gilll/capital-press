@@ -13,6 +13,9 @@
 			height: auto;
 		}
 	}
+	.ant-select-status-error .ant-select-selector {
+		border-color: #FF3B4C;
+	}
 	.ant-select-selector {
 		border: 2px solid #47669D;
 		border-radius: 3.4rem;
@@ -54,6 +57,11 @@
 		border: 2px solid #47669D;
 		border-radius: 3.4rem;
 		padding: 2.4rem 2.6rem 2.2rem;
+		transition: 0.3s;
+	}
+	.ant-input.ant-input-status-error {
+		border-color: #FF3B4C;
+		transition: 0.3s;
 	}
 	.flex-radio {
 		display: flex;
@@ -113,6 +121,9 @@
 		line-height: 1.8rem;
 		text-transform: uppercase;
 		font-family: "Pragmatica Extended", "Gilroy", sans-serif;
+	}
+	.ant-btn:disabled {
+		background-color: rgba(0, 0, 0, 0.04);
 	}
 	.ant-btn {
 		font-weight: 500;
@@ -244,6 +255,12 @@ body {
 	min-height: 32.2rem;
 	background-color: white;
 	position: relative;
+	&.finish {
+		width: 78.6rem;
+		margin: 0 auto;
+		padding: 6rem;
+		text-align: center;
+	}
 }
 
 .cp-title {
@@ -353,6 +370,97 @@ body {
 	display: flex;
 	justify-content: right;
 	align-items: center;
+	position: relative;
+}
+
+.cp-actions-text {
+	position: absolute;
+	left: 0;
+	transition: 0.3s;
+	opacity: 1;
+	font-family: 'Gilroy', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+	color: #777A7D;
+	z-index: 2;
+	a {
+		font-weight: 700;
+		font-style: normal;
+		text-decoration: underline;
+	}
+	&.hide {
+		transition: 0.3s;
+		opacity: 0;
+	}
+}
+
+.cp-actions-error {
+	color: #424A55;
+	position: absolute;
+	left: 0;
+	font-family: 'Pragmatica Extended', sans-serif;
+	font-weight: 500;
+	font-size: 1.4rem;
+	line-height: 1.8rem;
+	text-transform: uppercase;
+	background: #FFD8DB;
+	display: flex;
+	align-items: center;
+	padding: 1.2rem 1.5rem;
+	min-width: 70rem;
+	border-radius: 3.4rem;
+	transition: 0.3s;
+	opacity: 0;
+	&.show {
+		transition: 0.3s;
+		opacity: 1;
+	}
+	div {
+		position: relative;
+		top: 0.2rem
+	}
+}
+
+.cp-actions-error-icon {
+	width: 4.5rem;
+	height: 4.5rem;
+	margin-right: 2rem;
+}
+
+.sum-block {
+	padding-bottom: 1.5rem;
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+.sum-row {
+	display: flex;
+	margin-bottom: 1rem;
+	font-family: 'Gilroy', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+	color: #424A55;
+}
+
+.sum-block-title {
+	margin-bottom: 1rem;
+	font-weight: 700;
+	font-size: 2.4rem;
+	line-height: 1.25;
+	color: #424A55;
+}
+
+.sum-val {
+	margin-left: 1.5rem;
+	font-weight: 700;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+	color: #424A55;
 }
 
 .animate {
@@ -468,4 +576,421 @@ body {
 	padding: 2.6rem;
 	border: 2px solid #47669D;
 	border-radius: 3.5rem;
+}
+
+#cp-calc .cp-item-line-error .flex-radio .ant-radio-button-wrapper {
+	border-color: #FF3B4C;
+}
+
+.email {
+	&:after {
+		content: 'Введите корректный e-mail';
+		display: block;
+		color: #FF3B4C;
+		transition: 0.3s;
+		opacity: 0;
+		font-family: 'Gilroy', sans-serif;
+		font-style: normal;
+		font-size: 1.8rem;
+		line-height: 2.1rem;
+		position: absolute;
+		margin-left: 3rem;
+		margin-top: 0.5rem;
+	}
+	&.email-format-err:after {
+		transition: 0.3s;
+		opacity: 1;
+	}
+}
+
+.icon-done {
+	width: 12rem;
+	height: 12rem;
+	display: block;
+	margin: 0 auto 3.2rem;
+}
+
+.finish-title {
+	font-style: normal;
+	font-weight: 800;
+	font-size: 2.5rem;
+	line-height: 3.4rem;
+	margin-bottom: 2.5rem;
+	text-transform: uppercase;
+}
+
+.finish-text {
+	font-family: 'Gilroy', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+	margin-bottom: 5rem;
+	span {
+		font-weight: 700;
+	}
+}
+
+.finish .btn-white {
+	margin-right: 0;
+}
+
+.finish-actions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-select {
+	width: 38.6rem !important;
+}
+.mobShow {
+	display: none;
+}
+
+@media (max-width: 48em) {
+	#cp-calc {
+		width: auto;
+		margin: 0 4rem;
+		font-size: 3rem;
+		line-height: 4.4rem;
+	}
+	.main-select {
+		width: 100% !important;
+	}
+	.cp-header__item {
+		display: none;
+		border-right: none;
+		padding: 0;
+		&.active {
+			display: flex;
+		}
+	}
+	.cp-header {
+		padding: 4rem;
+		font-size: 2.5rem;
+		line-height: 120%;
+		margin-bottom: 4rem;
+	}
+	.cp-header__step {
+		width: 10rem;
+		height: 10rem;
+		font-size: 3.6rem;
+		line-height: 120%;
+	}
+	.cp-box {
+		padding: 7rem 4rem;
+		min-height: auto;
+	}
+	#cp-calc .cp-special {
+		background-color: #47669D;
+		color: white;
+		top: 52rem;
+		right: unset;
+		left: 0;
+		width: 100vw;
+		margin: 0 -4rem;
+		padding: 8rem;
+		height: auto;
+		.ant-btn {
+			background-color: white;
+			color: #47669D;
+			path {
+				stroke: #47669D;
+			}
+		}
+	}
+	.mobShow {
+		display: block;
+	}
+	.arrow-only {
+		width: 12.4rem;
+	}
+	.cp-title {
+		font-size: 3.6rem;
+		line-height: 120%;
+		margin-bottom: 5.6rem;
+	}
+	.cp-item-line {
+		display: block;
+		margin-left: 0;
+	}
+	.cp-item {
+		width: 100%;
+		margin-left: 0;
+		margin-bottom: 4rem;
+	}
+	.hidden-line.hidden {
+		margin-bottom: 0;
+	}
+	#cp-calc .ant-select-selector {
+		border: 1px solid #47669D;
+		border-radius: 6.4rem;
+		height: 12.8rem;
+		padding: 0 10rem 0 4.8rem;
+		font-weight: 600;
+		font-size: 2.6rem;
+		line-height: 3.2rem;
+	}
+	#cp-calc .ant-select {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	#cp-calc .ant-select-selection-item, #cp-calc .ant-select-selection-placeholder {
+		padding-right: 0;
+		display: flex;
+		align-items: center;
+		white-space: unset;
+		line-height: 3rem;
+	}
+	body .ant-select-dropdown {
+		padding: 4.8rem 2.4rem 4.8rem 4.8rem;
+		border: 1px solid #47669D;
+		border-radius: 6rem;
+		font-weight: 600;
+		font-size: 2.6rem;
+		line-height: 3.2rem;
+		width: unset !important;
+	}
+	#cp-calc .icon-select {
+		width: 8rem;
+		height: 8rem;
+		border: 1px solid #47669D;
+		img {
+			width: 4rem;
+			height: 4rem;
+		}
+	}
+	.cp-actions-error {
+		min-width: auto;
+	}
+
+	body .ant-select-dropdown .ant-select-item {
+		font-size: 2.6rem;
+		line-height: 3.2rem;
+		padding: 2.2rem 0;
+	}
+	body .ant-select-item-option-content {
+	  	white-space: unset !important;
+	}
+	body .ant-select-dropdown .ant-select-item-option:before {
+		margin: 0.3rem 1.6rem 0 2rem;
+		width: 2.8rem;
+		height: 2.8rem;
+		border: 0.8rem solid white;
+	}
+	body .rc-virtual-list-holder {
+		max-height: 50rem !important;
+	}
+
+	#cp-calc .ant-input, #cp-calc textarea {
+		border: 1px solid #47669D;
+		padding: 4.4rem 4.8rem;
+		font-size: 2.6rem;
+		line-height: 3.2rem;
+		border-radius: 6.2rem;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+
+	#cp-calc textarea {
+		height: 42.6rem;
+	}
+
+	.cp-row {
+		margin-bottom: 2.4rem;
+		padding-bottom: 1px;
+	}
+
+	input::placeholder, textarea::placeholder {
+		font-size: 2.6rem !important;
+		line-height: 3.2rem !important;
+	}
+	#cp-calc .flex-radio {
+		display: block;
+	}
+	#cp-calc .flex-radio .ant-radio-button-wrapper, .cCheck-group .cCheck-label {
+		width: 100%;
+		display: block;
+		margin-left: 0;
+		margin-bottom: 4rem;
+		border: 1px solid #47669D;
+		font-size: 2.6rem;
+		line-height: 3.2rem;
+		border-radius: 6.2rem;
+		padding: 4.8rem 4rem 4.4rem;
+		box-sizing: border-box;
+	}
+	body .icon-radio {
+		width: 3.6rem;
+		height: 3.6rem;
+		margin-left: -4.2rem;
+	}
+	.hidden-line {
+		height: 16.4rem;
+	}
+	.cCheck-group {
+		margin-left: 0;
+		display: block;
+	}
+	.cCheck-item {
+		margin-left: 0;
+		width: 100%;
+	}
+	#cp-calc .ant-btn, .btn-white {
+		font-size: 2.6rem;
+		line-height: 3.2rem;
+		min-height: 12.4rem;
+		padding: 4.6rem;
+		border-radius: 6.2rem;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.btn-white {
+		border: 1px solid #424A55;
+	}
+	#cp-calc .ant-radio-button-wrapper {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.cCheck-label {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	#cp-calc .ant-btn.with-arrow {
+		padding-right: 9rem;
+	}
+	body .icon-button {
+		width: 4.8rem;
+		height: 4.8rem;
+		margin-left: 1.2rem;
+		margin-top: -1rem;
+	}
+	.cp-actions {
+		display: block;
+	}
+	.cp-actions-error {
+		position: unset;
+		height: 0;
+
+		font-size: 2.6rem;
+		line-height: 3.2rem;
+		text-align: left;
+		padding: 0 3rem;
+		border-radius: 7.5rem;
+		margin-bottom: 0;
+		&.show {
+			height: 15rem;
+			padding: 3rem;
+			margin-bottom: 4rem;
+		}
+	}
+	body .cp-actions-error-icon {
+		width: 9rem;
+		height: 9rem;
+		flex-shrink: 0;
+	}
+
+	.binding-soft.animate.show {
+		height: 126.4rem !important;
+	}
+	.binding-hard.animate.show {
+		height: 206.4rem !important
+	}
+	.form-waning {
+		padding: 5rem 6rem;
+		font-size: 3rem;
+		line-height: 4rem;
+		background: #47669D;
+		margin-bottom: 5rem;
+	}
+	.form-waning-icon {
+		width: 7rem;
+		height: 7rem;
+		top: -1.6rem;
+		left: -1.6rem;
+		font-size: 4rem;
+	}
+	.mobHide {
+		display: none;
+	}
+	.cp-actions {
+		.btn-white {
+			position: absolute;
+			left: 0;
+			min-width: 26rem;
+		}
+	}
+	.cp-actions-text {
+		position: unset;
+		text-align: left;
+		margin-bottom: 5rem;
+		font-size: 3rem;
+		line-height: 1.2;
+		height: 11rem;
+	}
+	.cp-actions-text.hide {
+		height: 0;
+		margin-bottom: 0;
+	}
+	.email:after {
+		font-size: 3rem;
+		line-height: 1.2;
+		margin-top: 0;
+	}
+	.sum-row {
+		display: block;
+		margin-bottom: 4rem;
+	}
+	.sum-title {
+		margin-bottom: 1.6rem;
+		font-size: 3rem;
+		line-height: 1.2;
+	}
+	.sum-val {
+		margin-left: 0;
+		font-size: 3rem;
+		line-height: 1.2;
+	}
+	.sum-block-title {
+		font-style: normal;
+		font-weight: 800;
+		font-size: 2.5rem;
+		line-height: 3.4rem;
+		margin-bottom: 2.5rem;
+		text-transform: uppercase;
+	}
+	.sum-block {
+		padding-bottom: 3rem;
+	}
+	.cp-box.finish {
+		width: auto;
+		padding: 4.8rem;
+	}
+	.finish-title {
+		font-size: 3.6rem;
+		line-height: 120%;
+		margin-bottom: 4rem;
+	}
+	.finish-text {
+		font-size: 3rem;
+		line-height: 4.4rem;
+		margin-bottom: 5rem;
+	}
+	.cp-special {
+		display: block;
+	}
+	.cp-special-title {
+		font-family: 'Pragmatica Extended', sans-serif;
+		font-weight: 800;
+		font-size: 3.6rem;
+		line-height: 120%;
+		text-transform: uppercase;
+		margin-bottom: 4rem;
+	}
+	.special-holder {
+		height: 65rem;
+	}
+	.cp-special-text {
+		font-family: 'Gilroy', sans-serif;
+		font-weight: 500;
+		font-size: 3rem;
+		line-height: 4.4rem;
+		margin-bottom: 5rem;
+	}
 }

@@ -3,7 +3,7 @@ import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
 
-const Labels = () => {
+const Labels = ({form, setForm, validate}) => {
 	const { Option, OptGroup } = Select
 
 	return (
@@ -12,10 +12,20 @@ const Labels = () => {
 				<div className="cp-title">Формат продукции</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input placeholder="Высота (мм)*"/>
+						<Input
+							value={form.format.height}
+							onChange={(e) => setForm({...form, format: {...form.format, height: e.target.value}})}
+							placeholder="Высота (мм)*"
+							status={validate && !form.format.height && "error"}
+						/>
 					</div>
 					<div className="cp-item">
-						<Input placeholder="Ширина (мм)*"/>
+						<Input
+							value={form.format.width}
+							onChange={(e) => setForm({...form, format: {...form.format, width: e.target.value}})}
+							placeholder="Ширина (мм)*"
+							status={validate && !form.format.width && "error"}
+						/>
 					</div>
 				</div>
 			</div>
@@ -27,6 +37,9 @@ const Labels = () => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Клеевое покрытие**"
 							suffixIcon={<IconSelect/>}
+							value={form.params.coating}
+							onChange={(val) => setForm({...form, params: {...form.params, coating: val}})}
+							status={validate && !form.params.coating && "error"}
 						>
 							<OptGroup label="Клеевое покрытие*">
 								<Option value='Переменное клеевое покрытие (позволяет оклеивать стикеры, не оставляя следов на поверхности)'>Переменное клеевое покрытие (позволяет оклеивать стикеры, не оставляя следов на поверхности)</Option>

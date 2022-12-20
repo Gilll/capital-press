@@ -3,7 +3,7 @@ import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
 
-const Leaflets = ({form, setForm, validate}) => {
+const Posters = ({form, setForm, validate}) => {
 	const { Option, OptGroup } = Select
 
 	return (
@@ -59,9 +59,7 @@ const Leaflets = ({form, setForm, validate}) => {
 						>
 							<OptGroup label="Красочность печати">
 								<Option value='черно-белая, печать с 1 стороны (1+0)'>черно-белая, печать с 1 стороны (1+0)</Option>
-								<Option value='черно-белая, печать с 2-х сторон (1+1)'>черно-белая, печать с 2-х сторон (1+1)</Option>
 								<Option value='цветная печать с 1 стороны (4+0)'>цветная печать с 1 стороны (4+0)</Option>
-								<Option value='цветная печать с 2-х сторон (4+4)'>цветная печать с 2-х сторон (4+4)</Option>
 							</OptGroup>
 						</Select>
 					</div>
@@ -79,4 +77,4 @@ const Leaflets = ({form, setForm, validate}) => {
 	);
 };
 
-export default Leaflets;
+export default Posters;

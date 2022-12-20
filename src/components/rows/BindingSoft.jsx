@@ -3,7 +3,7 @@ import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
 
-const BindingSoft = ({ visible, animated }) => {
+const BindingSoft = ({ visible, animated, binding, setBinding, validate }) => {
 	const { Option, OptGroup } = Select
 
 	return (
@@ -14,13 +14,21 @@ const BindingSoft = ({ visible, animated }) => {
 				<div className="cp-title">Обложка</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input placeholder="Плотность бумаги (г/м2)*"/>
+						<Input
+							value={binding.cover.thickness}
+							onChange={(e) => setBinding({...binding, cover: {...binding.cover, thickness: e.target.value}})}
+							placeholder="Плотность бумаги (г/м2)*"
+							status={validate && !binding.cover.thickness && "error"}
+						/>
 					</div>
 					<div className="cp-item">
 						<Select
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Красочность печати*"
 							suffixIcon={<IconSelect/>}
+							value={binding.cover.printColorfulness}
+							onChange={(val) => setBinding({...binding, cover: {...binding.cover, printColorfulness: val}})}
+							status={validate && !binding.cover.printColorfulness && "error"}
 						>
 							<OptGroup label="Красочность печати">
 								<Option value='цветная с одной стороны (4+0)'>цветная с одной стороны (4+0)</Option>
@@ -38,6 +46,9 @@ const BindingSoft = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Способ скрепления страниц*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.pageBinding}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, pageBinding: val}})}
+							status={validate && !binding.block.pageBinding && "error"}
 						>
 							<OptGroup label="Способ скрепления страниц">
 								<Option value='клеевое'>клеевое</Option>
@@ -50,6 +61,9 @@ const BindingSoft = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Бумага*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.paper}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, paper: val}})}
+							status={validate && !binding.block.paper && "error"}
 						>
 							<OptGroup label="Бумага">
 								<Option value='офсетная'>офсетная</Option>
@@ -60,7 +74,14 @@ const BindingSoft = ({ visible, animated }) => {
 							</OptGroup>
 						</Select>
 					</div>
-					<div className="cp-item"><Input placeholder="Плотность бумаги (г/м2)"/></div>
+					<div className="cp-item">
+						<Input
+							value={binding.block.paperDensity}
+							onChange={(e) => setBinding({...binding, block: {...binding.block, paperDensity: e.target.value}})}
+							placeholder="Плотность бумаги (г/м2)*"
+							status={validate && !binding.block.paperDensity && "error"}
+						/>
+					</div>
 				</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
@@ -68,6 +89,9 @@ const BindingSoft = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Красочность печати*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.printColorfulness}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, printColorfulness: val}})}
+							status={validate && !binding.block.printColorfulness && "error"}
 						>
 							<OptGroup label="Красочность печати">
 								<Option value='черно-белая (1+1)'>черно-белая (1+1)</Option>

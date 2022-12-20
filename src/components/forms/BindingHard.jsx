@@ -1,38 +1,34 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Radio from "antd/es/radio";
 import IconRadio from "../../assets/icons/IconRadio";
 import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
 
-const BindingHard = ({ visible, animated }) => {
+const BindingHard = ({ visible, animated, binding, setBinding, validate }) => {
 	const { Option, OptGroup } = Select
-	const [form, setForm] = useState({
-		cover: '',
-		additionalFinishing: '',
-		coverLamination: null
-	});
-
-	useEffect(() => {
-		console.log(form.cover);
-	},[form.cover])
 
 	return (
 		<div className={ 'binding-hard' + (animated ? ' animate' : '') + (visible ? ' show' : '')}
-			 style={{ height: animated ? visible ? form.cover === 'Картон /  картон с поролоном' ? '76.4rem' : '66.4rem' : '0' : '' }}
+			 style={{ height: animated ? visible ? binding.cover.type === 'Картон /  картон с поролоном' ? '76.4rem' : '66.4rem' : '0' : '' }}
 		>
 			<div className="cp-row">
 				<div className="cp-title">Обложка</div>
-				<div className="cp-item-line">
-					<Radio.Group value={form.cover} onChange={(e) => setForm({...form, cover: e.target.value})} className="flex-radio" buttonStyle="solid">
+				<div className={validate && !binding.cover.type ? "cp-item-line cp-item-line-error" : "cp-item-line"}>
+					<Radio.Group value={binding.cover.type} onChange={(e) => setBinding({...binding, cover: {...binding.cover, type: e.target.value, thickness: null}})} className="flex-radio" buttonStyle="solid">
 						<Radio.Button value="переплет 7бц"><IconRadio/>переплет 7бц</Radio.Button>
 						<Radio.Button value="переплетный материал (7б)"><IconRadio/>переплетный материал (7б)</Radio.Button>
 						<Radio.Button value="Картон /  картон с поролоном"><IconRadio/>Картон /  картон с поролоном</Radio.Button>
 					</Radio.Group>
 				</div>
-				<div className={form.cover === 'Картон /  картон с поролоном' ? "cp-item-line hidden-line" : "cp-item-line hidden-line hidden"}>
+				<div className={binding.cover.type === 'Картон /  картон с поролоном' ? "cp-item-line hidden-line" : "cp-item-line hidden-line hidden"}>
 					<div className="cp-item">
-						<Input placeholder="Толщина картона (мм)*"/>
+						<Input
+							value={binding.cover.thickness}
+							onChange={(e) => setBinding({...binding, cover: {...binding.cover, thickness: e.target.value}})}
+							placeholder="Толщина картона (мм)*"
+							status={validate && !binding.cover.thickness && "error"}
+						/>
 					</div>
 				</div>
 			</div>
@@ -44,6 +40,9 @@ const BindingHard = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Бумага*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.paper}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, paper: val}})}
+							status={validate && !binding.block.paper && "error"}
 						>
 							<OptGroup label="Бумага">
 								<Option value='офсетная'>офсетная</Option>
@@ -54,12 +53,22 @@ const BindingHard = ({ visible, animated }) => {
 							</OptGroup>
 						</Select>
 					</div>
-					<div className="cp-item"><Input placeholder="Плотность бумаги (г/м2)*"/></div>
+					<div className="cp-item">
+						<Input
+							placeholder="Плотность бумаги (г/м2)*"
+							value={binding.block.paperDensity}
+							onChange={(e) => setBinding({...binding, block: {...binding.block, paperDensity: e.target.value}})}
+							status={validate && !binding.block.paperDensity && "error"}
+						/>
+					</div>
 					<div className="cp-item">
 						<Select
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Красочность печати*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.printColorfulness}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, printColorfulness: val}})}
+							status={validate && !binding.block.printColorfulness && "error"}
 						>
 							<OptGroup label="Красочность печати">
 								<Option value='черно-белая (1+1)'>черно-белая (1+1)</Option>
@@ -74,6 +83,9 @@ const BindingHard = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Наличие вставок*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.inserts}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, inserts: val}})}
+							status={validate && !binding.block.inserts && "error"}
 						>
 							<OptGroup label="Наличие вставок">
 								<Option value='да'>да</Option>
@@ -86,6 +98,9 @@ const BindingHard = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Красочность форзацев*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.endpapersColorful}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, endpapersColorful: val}})}
+							status={validate && !binding.block.endpapersColorful && "error"}
 						>
 							<OptGroup label="Красочность форзацев">
 								<Option value='белые (без запечатки)'>белые (без запечатки)</Option>
@@ -99,6 +114,9 @@ const BindingHard = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="Корешок*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.spine}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, spine: val}})}
+							status={validate && !binding.block.spine && "error"}
 						>
 							<OptGroup label="Корешок">
 								<Option value='прямой'>прямой</Option>
@@ -113,6 +131,9 @@ const BindingHard = ({ visible, animated }) => {
 							dropdownAlign={{ offset: [0, 10] }}
 							placeholder="каптал*"
 							suffixIcon={<IconSelect/>}
+							value={binding.block.captal}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, captal: val}})}
+							status={validate && !binding.block.captal && "error"}
 						>
 							<OptGroup label="каптал">
 								<Option value='белый'>белый</Option>

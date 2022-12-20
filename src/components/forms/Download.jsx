@@ -5,7 +5,7 @@ import IconButton from "../../assets/icons/IconButton";
 import Upload from "antd/es/upload";
 import {message} from "antd";
 
-const Download = ({setStep}) => {
+const Download = ({setStep, setSkipForm}) => {
 	const props = {
 		name: 'file',
 		action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
@@ -38,7 +38,10 @@ const Download = ({setStep}) => {
 					</Upload>
 				</div>
 				<div className="cp-actions">
-					<div className="btn-white" onClick={() => setStep(0)}>Вернуться назад</div>
+					<div className="btn-white" onClick={() => {
+						setSkipForm();
+						setStep(0)
+					}}><span className="mobHide">Вернуться&nbsp;</span><span>назад</span></div>
 					<Button className="with-arrow" type="primary" onClick={() => setStep(2)}>Далее<IconButton/></Button>
 				</div>
 			</div>

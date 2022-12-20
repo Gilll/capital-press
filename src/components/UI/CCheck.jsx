@@ -17,9 +17,9 @@ const CCheck = ({ children, value, onChange }) => {
 		<>
 			<div className='cCheck-group'>
 				{children.map((component, index) =>
-					component.type.name === 'Item' ?
-							<div className='cCheck-item' onClick={() => toggleValue(component.props.value)} key={index}>
-								<Item className={curVal.includes(component.props.value) ? "cCheck-label checked" : "cCheck-label"}>{component.props.children}</Item>
+					component.type.displayName === 'Item' ?
+							<div className='cCheck-item' key={index}>
+								<Item onClick={() => toggleValue(component.props.value)} cur={curVal} value={component.props.value} className={curVal.includes(component.props.value) ? "cCheck-label checked" : "cCheck-label"}>{component.props.children}</Item>
 							</div>
 						: <div className='cCheck-item' key={index}>{component}</div>
 				)}
@@ -28,7 +28,12 @@ const CCheck = ({ children, value, onChange }) => {
 	);
 };
 
-const Item = (props) => <div {...props}><IconRadio/>{props.children}</div>;
+const Item = (props) => {
+	return (
+		<div {...props}><IconRadio/>{props.children}</div>
+	);
+};
+Item.displayName = 'Item';
 CCheck.Item = Item;
 
 export default CCheck;
