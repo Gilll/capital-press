@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/capital-press/static/css/main.8cf161e2.css",
-    "main.js": "/capital-press/static/js/main.69e913e4.js",
+    "main.js": "/capital-press/static/js/main.87531c7e.js",
     "static/media/PragmaticaExtended-Bold.eot": "/capital-press/static/media/PragmaticaExtended-Bold.b204c9ba794e449a2a66.eot",
     "static/media/PragmaticaExtended-Bold.ttf": "/capital-press/static/media/PragmaticaExtended-Bold.f5a813ddad15ca7d3b40.ttf",
     "static/media/PragmaticaExtended-Book.eot": "/capital-press/static/media/PragmaticaExtended-Book.22f0fc39d9776b26fadb.eot",
@@ -33,10 +33,10 @@
     "index.html": "/capital-press/index.html",
     "static/media/arrow-down-right.svg": "/capital-press/static/media/arrow-down-right.78eb3ccc1e95f9fe69f257113853c670.svg",
     "main.8cf161e2.css.map": "/capital-press/static/css/main.8cf161e2.css.map",
-    "main.69e913e4.js.map": "/capital-press/static/js/main.69e913e4.js.map"
+    "main.87531c7e.js.map": "/capital-press/static/js/main.87531c7e.js.map"
   },
   "entrypoints": [
     "static/css/main.8cf161e2.css",
-    "static/js/main.69e913e4.js"
+    "static/js/main.87531c7e.js"
   ]
 }
