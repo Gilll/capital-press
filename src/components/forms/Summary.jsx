@@ -979,7 +979,7 @@ const Summary = ({setStep, request}) => {
 		let resp = '', htmlData = document.getElementById('cp-summary-box').innerHTML;
 		setIsLoading(true)
 		try {
-			const response = await fetch('http://capit.fixmaski.ru/ajax/send/send.php', {
+			const response = await fetch('/ajax/send/send.php', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -995,7 +995,7 @@ const Summary = ({setStep, request}) => {
 				throw new Error(resp.error.description);
 			}
 			setIsLoading(false);
-			//setStep(4);
+			setStep(4);
 		} catch (e) {
 			setIsLoading(false);
 			if (e.message === 'Failed to fetch') {

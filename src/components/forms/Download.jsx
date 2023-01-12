@@ -8,7 +8,7 @@ import {message} from "antd";
 const Download = ({setStep, setSkipForm, files, setFiles}) => {
 	const props = {
 		name: 'file',
-		action: 'http://capit.fixmaski.ru/ajax/send/save.php',
+		action: '/ajax/send/save.php',
 		headers: {
 			authorization: 'authorization-text',
 		},

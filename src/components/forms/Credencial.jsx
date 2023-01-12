@@ -37,7 +37,7 @@ const Credential = ({setStep, user, setUser, request, setRequest}) => {
 				let resp = '';
 				setMlIsLoading(true)
 				try {
-					const response = await fetch('http://capit.fixmaski.ru/ajax/send/manager.php', {
+					const response = await fetch('/ajax/send/manager.php', {
 						method: 'GET'
 					});
 					resp = await response.json();
