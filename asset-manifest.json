@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/capital-press/static/css/main.f072271d.css",
+    "main.css": "/capital-press/static/css/main.0eafe21d.css",
     "main.js": "/capital-press/static/js/main.5629eab2.js",
     "static/media/PragmaticaExtended-Bold.eot": "/capital-press/static/media/PragmaticaExtended-Bold.b204c9ba794e449a2a66.eot",
     "static/media/PragmaticaExtended-Bold.ttf": "/capital-press/static/media/PragmaticaExtended-Bold.f5a813ddad15ca7d3b40.ttf",
@@ -32,11 +32,11 @@
     "static/media/PragmaticaExtended-ExtraLight.woff2": "/capital-press/static/media/PragmaticaExtended-ExtraLight.7f80828a98fd6276c908.woff2",
     "index.html": "/capital-press/index.html",
     "static/media/arrow-down-right.svg": "/capital-press/static/media/arrow-down-right.78eb3ccc1e95f9fe69f257113853c670.svg",
-    "main.f072271d.css.map": "/capital-press/static/css/main.f072271d.css.map",
+    "main.0eafe21d.css.map": "/capital-press/static/css/main.0eafe21d.css.map",
     "main.5629eab2.js.map": "/capital-press/static/js/main.5629eab2.js.map"
   },
   "entrypoints": [
-    "static/css/main.f072271d.css",
+    "static/css/main.0eafe21d.css",
     "static/js/main.5629eab2.js"
   ]
 }
