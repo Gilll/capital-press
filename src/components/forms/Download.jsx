@@ -5,19 +5,22 @@ import IconButton from "../../assets/icons/IconButton";
 import Upload from "antd/es/upload";
 import {message} from "antd";
 
-const Download = ({setStep, setSkipForm}) => {
+const Download = ({setStep, setSkipForm, files, setFiles}) => {
 	const props = {
 		name: 'file',
-		action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+		action: 'http://capit.fixmaski.ru/ajax/send/save.php',
 		headers: {
 			authorization: 'authorization-text',
 		},
 		onChange(info) {
 			if (info.file.status !== 'uploading') {
-				console.log(info.file, info.fileList);
+
 			}
 			if (info.file.status === 'done') {
 				message.success(`${info.file.name} file uploaded successfully`);
+				setFiles([...files, { name: info.file.name, url: info.file.response }])
+			} else if (info.file.status === 'removed') {
+				setFiles([...files].filter((el) => el.name !== info.file.name))
 			} else if (info.file.status === 'error') {
 				message.error(`${info.file.name} file upload failed.`);
 			}

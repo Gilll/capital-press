@@ -152,9 +152,6 @@
 }
 
 body {
-	.rc-virtual-list-holder {
-		max-height: 27.8rem !important;
-	}
 	.ant-select-dropdown {
 		padding: 2.3rem 0.8rem 2.3rem 2.6rem;
 		border: 2px solid #47669D;
@@ -173,9 +170,6 @@ body {
 			font-weight: 600;
 			border-radius: 1rem;
 			margin-right: 1.8rem;
-			&:first-child {
-				margin-top: -1.1rem;
-			}
 		}
 		.rc-virtual-list-scrollbar {
 			width: 0.4rem !important;
@@ -458,9 +452,10 @@ body {
 .sum-val {
 	margin-left: 1.5rem;
 	font-weight: 700;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	line-height: 2.5rem;
 	color: #424A55;
+	text-transform: uppercase;
 }
 
 .animate {
@@ -576,6 +571,8 @@ body {
 	padding: 2.6rem;
 	border: 2px solid #47669D;
 	border-radius: 3.5rem;
+	font-size: 1.7rem;
+	line-height: 1.25;
 }
 
 #cp-calc .cp-item-line-error .flex-radio .ant-radio-button-wrapper {
@@ -777,9 +774,6 @@ body {
 		width: 2.8rem;
 		height: 2.8rem;
 		border: 0.8rem solid white;
-	}
-	body .rc-virtual-list-holder {
-		max-height: 50rem !important;
 	}
 
 	#cp-calc .ant-input, #cp-calc textarea {

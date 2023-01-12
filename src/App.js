@@ -60,7 +60,8 @@ function App() {
 			email: null,
 			phone: null,
 			entity: null
-		}
+		},
+		files: []
 	})
 
 	const getForm = (val, ct) => {
@@ -95,6 +96,17 @@ function App() {
 	useEffect(() => {
 		console.log(request);
 	},[request])
+
+	useEffect(() => {
+		let df = document.getElementById('cp-calc').getAttribute('defaultValue');
+		if (df) {
+			df = parseInt(df);
+			if (df > 0 && df < 17) {
+				console.log('default value: ' + df)
+				setRequest((st) => { return {...st, form: getForm(df), formId: df }});
+			}
+		}
+	}, [])
 
 	const renderForm = () => {
 		switch (request.formId) {
@@ -268,7 +280,12 @@ function App() {
 				</>
 			}
 			{currentStep === 1 &&
-				<Download setStep={(val) => setCurrentStep(val)} setSkipForm={() => setRequest({...request, skipForm: false})}/>
+				<Download
+					setStep={(val) => setCurrentStep(val)}
+					setSkipForm={() => setRequest({...request, skipForm: false})}
+					files={request.files}
+					setFiles={(val) => setRequest({...request, files: val})}
+				/>
 			}
 			{currentStep === 2 &&
 				<Credential request={request} setRequest={(val) => setRequest(val)} user={request.user} setUser={(val) => setRequest({...request, user: val })} setStep={(val) => setCurrentStep(val)}/>
