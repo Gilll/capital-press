@@ -61,7 +61,8 @@ function App() {
 			phone: null,
 			entity: null
 		},
-		files: []
+		files: [],
+		filesLink: null
 	})
 
 	const getForm = (val, ct) => {
@@ -101,7 +102,7 @@ function App() {
 		let df = document.getElementById('cp-calc').getAttribute('defaultValue');
 		if (df) {
 			df = parseInt(df);
-			if (df > 0 && df < 17) {
+			if (df >= 0 && df < 17) {
 				console.log('default value: ' + df)
 				setRequest((st) => { return {...st, form: getForm(df), formId: df }});
 			}
@@ -285,6 +286,8 @@ function App() {
 					setSkipForm={() => setRequest({...request, skipForm: false})}
 					files={request.files}
 					setFiles={(val) => setRequest({...request, files: val})}
+					filesLink={request.filesLink}
+					setFilesLink={(val) => setRequest({...request, filesLink: val})}
 				/>
 			}
 			{currentStep === 2 &&

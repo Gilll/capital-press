@@ -1033,6 +1033,16 @@ const Summary = ({setStep, request}) => {
 							)}
 						</div>
 					}
+					{request.filesLink &&
+						<div className="sum-block" style={{paddingBottom: "1.5em"}}>
+							<div className="sum-block-title" style={{ marginBottom: "0.6em", fontWeight: 700, fontSize: "1.4em", lineHeight: 1.25, color: "#424A55", textTransform: "uppercase" }}>Ссылка на облако:</div>
+							<div className="sum-row" style={{ display: "flex",marginBottom: "0.5em", fontSize: "1em", color: "#424A55" }}>
+								<div className="sum-val" style={{ marginLeft: "1em", fontWeight: 700, fontSize: "0.9em", lineHeight: 1.25, color: "#424A55", textTransform: "uppercase"}}>
+									<a href={request.filesLink} style={{ color: '#47669D'}}>{request.filesLink}</a>
+								</div>
+							</div>
+						</div>
+					}
 					{request.formFooter.comment &&
 						<div className="sum-block" style={{paddingBottom: "1.5em"}}>
 							<div className="sum-block-title" style={{ marginBottom: "0.6em", fontWeight: 700, fontSize: "1.4em", lineHeight: 1.25, color: "#424A55", textTransform: "uppercase" }}>Коментарий:</div>

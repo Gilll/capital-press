@@ -5,7 +5,7 @@ import IconButton from "../../assets/icons/IconButton";
 import Upload from "antd/es/upload";
 import {message} from "antd";
 
-const Download = ({setStep, setSkipForm, files, setFiles}) => {
+const Download = ({setStep, setSkipForm, files, setFiles, filesLink, setFilesLink}) => {
 	const props = {
 		name: 'file',
 		action: '/ajax/send/save.php',
@@ -33,7 +33,11 @@ const Download = ({setStep, setSkipForm, files, setFiles}) => {
 				<div className="cp-title">Загрузка Макета</div>
 				<div className="cp-text">Вы можете загрузить файлы с компьютера или указать ссылку на облако</div>
 				<div className="cp-line">
-					<Input placeholder='Ссылка на облако'/>
+					<Input
+						placeholder='Ссылка на облако'
+						value={filesLink}
+						onChange={(e) => setFilesLink(e.target.value)}
+					/>
 				</div>
 				<div className="cp-dl-wrap">
 					<Upload {...props}>

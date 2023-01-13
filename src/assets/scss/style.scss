@@ -988,3 +988,11 @@ body {
 		margin-bottom: 5rem;
 	}
 }
+
+.phoneMask {
+	position: absolute;
+	width: calc(33% - 7rem);
+	z-index: 3;
+	height: 6.6rem;
+	opacity: 0;
+}
