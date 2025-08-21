@@ -1,10 +1,10 @@
 import React from 'react';
-import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
 import CCheck from "../UI/CCheck";
 import Radio from "antd/es/radio";
 import IconRadio from "../../assets/icons/IconRadio";
+import NumericInput from "../UI/NumericInput";
 
 const CalendarQuarterly = ({form, setForm, validate}) => {
 	const { Option, OptGroup } = Select
@@ -21,10 +21,10 @@ const CalendarQuarterly = ({form, setForm, validate}) => {
 					}
 				}}>
 					<div>
-						<Input
+						<NumericInput
 							placeholder="размер (мм)*"
 							value={form.top.size}
-							onChange={(e) => setForm({...form, top: {...form.top, size: e.target.value}})}
+							onChange={(val) => setForm({...form, top: {...form.top, size: val }})}
 							status={validate && !form.top.size && "error"}
 						/>
 					</div>
@@ -96,10 +96,10 @@ const CalendarQuarterly = ({form, setForm, validate}) => {
 				</div>
 				<div className={form.block.type === 'Индивидуальный' ? "cp-item-line hidden-line" : "cp-item-line hidden-line hidden"}>
 					<div className='cp-item'>
-						<Input
+						<NumericInput
 							placeholder="Плотность бумаги (г/м2)*"
 							value={form.block.paperDensity}
-							onChange={(e) => setForm({...form, block: {...form.block, paperDensity: e.target.value}})}
+							onChange={(val) => setForm({...form, block: {...form.block, paperDensity: val }})}
 							status={validate && !form.block.paperDensity && "error"}
 						/>
 					</div>

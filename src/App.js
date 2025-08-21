@@ -42,6 +42,7 @@ function App() {
 	const [currentStep, setCurrentStep] = useState(0);
 	const { Option, OptGroup } = Select
 	const [validate, setValidate] = useState(false)
+	const [fileIsUploading, setFileIsUploading] = React.useState(false);
 	const [request, setRequest] = useState({
 		formId: null,
 		manager: null,
@@ -285,9 +286,14 @@ function App() {
 					setStep={(val) => setCurrentStep(val)}
 					setSkipForm={() => setRequest({...request, skipForm: false})}
 					files={request.files}
-					setFiles={(val) => setRequest({...request, files: val})}
+					setFiles={(val) => {
+						setRequest({...request, files: val})
+						setFileIsUploading(false)
+					}}
 					filesLink={request.filesLink}
 					setFilesLink={(val) => setRequest({...request, filesLink: val})}
+					setFileIsUploading={(val) => setFileIsUploading(val)}
+					fileIsUploading={fileIsUploading}
 				/>
 			}
 			{currentStep === 2 &&

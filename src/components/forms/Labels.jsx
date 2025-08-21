@@ -1,7 +1,7 @@
 import React from 'react';
-import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
+import NumericInput from "../UI/NumericInput";
 
 const Labels = ({form, setForm, validate}) => {
 	const { Option, OptGroup } = Select
@@ -12,17 +12,17 @@ const Labels = ({form, setForm, validate}) => {
 				<div className="cp-title">Формат продукции</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.format.height}
-							onChange={(e) => setForm({...form, format: {...form.format, height: e.target.value}})}
+							onChange={(val) => setForm({...form, format: {...form.format, height: val}})}
 							placeholder="Высота (мм)*"
 							status={validate && !form.format.height && "error"}
 						/>
 					</div>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.format.width}
-							onChange={(e) => setForm({...form, format: {...form.format, width: e.target.value}})}
+							onChange={(val) => setForm({...form, format: {...form.format, width: val }})}
 							placeholder="Ширина (мм)*"
 							status={validate && !form.format.width && "error"}
 						/>

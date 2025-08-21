@@ -3,9 +3,9 @@ import BookFormat from "../rows/BookFormat";
 import AdditionalFinishingHard from "../rows/AdditionalFinishingHard";
 import Radio from "antd/es/radio";
 import IconRadio from "../../assets/icons/IconRadio";
-import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
+import NumericInput from "../UI/NumericInput";
 
 const Diaries = ({form, setForm, validate}) => {
 	const { Option, OptGroup } = Select
@@ -24,9 +24,9 @@ const Diaries = ({form, setForm, validate}) => {
 				</div>
 				<div className={form.cover.type === 'Картон /  картон с поролоном' ? "cp-item-line hidden-line" : "cp-item-line hidden-line hidden"}>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.cover.thickness}
-							onChange={(e) => setForm({...form, cover: {...form.cover, thickness: e.target.value}})}
+							onChange={(val) => setForm({...form, cover: {...form.cover, thickness: val}})}
 							placeholder="Толщина картона (мм)*"
 							status={validate && !form.cover.thickness && "error"}
 						/>
@@ -101,10 +101,10 @@ const Diaries = ({form, setForm, validate}) => {
 						</Select>
 					</div>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							placeholder="Плотность бумаги (г/м2)*"
 							value={form.block.individual.paperDensity}
-							onChange={(e) => setForm({...form, block: {...form.block, individual: {...form.block.individual, paperDensity: e.target.value}}})}
+							onChange={(val) => setForm({...form, block: {...form.block, individual: {...form.block.individual, paperDensity: val}}})}
 							status={validate && !form.block.individual.paperDensity && "error"}
 						/>
 					</div>

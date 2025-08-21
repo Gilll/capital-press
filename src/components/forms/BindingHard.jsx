@@ -1,9 +1,9 @@
 import React from 'react';
 import Radio from "antd/es/radio";
 import IconRadio from "../../assets/icons/IconRadio";
-import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
+import NumericInput from "../UI/NumericInput";
 
 const BindingHard = ({ visible, animated, binding, setBinding, validate }) => {
 	const { Option, OptGroup } = Select
@@ -23,9 +23,9 @@ const BindingHard = ({ visible, animated, binding, setBinding, validate }) => {
 				</div>
 				<div className={binding.cover.type === 'Картон /  картон с поролоном' ? "cp-item-line hidden-line" : "cp-item-line hidden-line hidden"}>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={binding.cover.thickness}
-							onChange={(e) => setBinding({...binding, cover: {...binding.cover, thickness: e.target.value}})}
+							onChange={(val) => setBinding({...binding, cover: {...binding.cover, thickness: val}})}
 							placeholder="Толщина картона (мм)*"
 							status={validate && !binding.cover.thickness && "error"}
 						/>
@@ -54,10 +54,10 @@ const BindingHard = ({ visible, animated, binding, setBinding, validate }) => {
 						</Select>
 					</div>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							placeholder="Плотность бумаги (г/м2)*"
 							value={binding.block.paperDensity}
-							onChange={(e) => setBinding({...binding, block: {...binding.block, paperDensity: e.target.value}})}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, paperDensity: val}})}
 							status={validate && !binding.block.paperDensity && "error"}
 						/>
 					</div>

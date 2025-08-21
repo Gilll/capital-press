@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Input from "antd/es/input";
 import Button from "antd/es/button";
 import IconButton from "../../assets/icons/IconButton";
+import NumericInput from "../UI/NumericInput";
 
 const FormFooter = ({warning, tip, goToNext, validate, form, setForm}) => {
 	const [showWarning, setShowWarning] = useState(false)
@@ -22,9 +22,9 @@ const FormFooter = ({warning, tip, goToNext, validate, form, setForm}) => {
 				<div className="cp-title">Тираж {tip && <span>{tip}</span>}</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.circulation}
-							onChange={(e) => setForm({...form, circulation: e.target.value})}
+							onChange={(val) => setForm({...form, circulation: val })}
 							placeholder="тираж*"
 							status={validate && !form.circulation && "error"}
 						/>

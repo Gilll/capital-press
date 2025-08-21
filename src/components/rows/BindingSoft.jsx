@@ -2,6 +2,7 @@ import React from 'react';
 import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
+import NumericInput from "../UI/NumericInput";
 
 const BindingSoft = ({ visible, animated, binding, setBinding, validate }) => {
 	const { Option, OptGroup } = Select
@@ -14,9 +15,9 @@ const BindingSoft = ({ visible, animated, binding, setBinding, validate }) => {
 				<div className="cp-title">Обложка</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={binding.cover.thickness}
-							onChange={(e) => setBinding({...binding, cover: {...binding.cover, thickness: e.target.value}})}
+							onChange={(val) => setBinding({...binding, cover: {...binding.cover, thickness: val }})}
 							placeholder="Плотность бумаги (г/м2)*"
 							status={validate && !binding.cover.thickness && "error"}
 						/>
@@ -75,9 +76,9 @@ const BindingSoft = ({ visible, animated, binding, setBinding, validate }) => {
 						</Select>
 					</div>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={binding.block.paperDensity}
-							onChange={(e) => setBinding({...binding, block: {...binding.block, paperDensity: e.target.value}})}
+							onChange={(val) => setBinding({...binding, block: {...binding.block, paperDensity: val }})}
 							placeholder="Плотность бумаги (г/м2)*"
 							status={validate && !binding.block.paperDensity && "error"}
 						/>

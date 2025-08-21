@@ -1,7 +1,7 @@
 import React from 'react';
-import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
+import NumericInput from "../UI/NumericInput";
 
 const Booklets = ({form, setForm, validate}) => {
 	const { Option, OptGroup } = Select
@@ -12,17 +12,17 @@ const Booklets = ({form, setForm, validate}) => {
 				<div className="cp-title">Размер в сложенном виде</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.format.height}
-							onChange={(e) => setForm({...form, format: {...form.format, height: e.target.value}})}
+							onChange={(val) => setForm({...form, format: {...form.format, height: val}})}
 							placeholder="Высота (мм)*"
 							status={validate && !form.format.height && "error"}
 						/>
 					</div>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.format.width}
-							onChange={(e) => setForm({...form, format: {...form.format, width: e.target.value}})}
+							onChange={(val) => setForm({...form, format: {...form.format, width: val }})}
 							placeholder="Ширина (мм)*"
 							status={validate && !form.format.width && "error"}
 						/>
@@ -33,9 +33,9 @@ const Booklets = ({form, setForm, validate}) => {
 				<div className="cp-title">Размер в развороте</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.format.size}
-							onChange={(e) => setForm({...form, format: {...form.format, size: e.target.value}})}
+							onChange={(val) => setForm({...form, format: {...form.format, size: val }})}
 							placeholder="Ширина (мм)*"
 							status={validate && !form.format.size && "error"}
 						/>
@@ -77,19 +77,19 @@ const Booklets = ({form, setForm, validate}) => {
 						</Select>
 					</div>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							placeholder="Количесвто фальцев*"
 							value={form.params.foldsCount}
-							onChange={(e) => setForm({...form, params: {...form.params, foldsCount: e.target.value}})}
+							onChange={(val) => setForm({...form, params: {...form.params, foldsCount: val }})}
 							status={validate && !form.params.foldsCount && "error"}
 						/>
 					</div>
 				</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.params.paperDensity}
-							onChange={(e) => setForm({...form, params: {...form.params, paperDensity: e.target.value}})}
+							onChange={(val) => setForm({...form, params: {...form.params, paperDensity: val }})}
 							placeholder="Плотность бумаги (г/м2)*"
 							status={validate && !form.params.paperDensity && "error"}
 						/>

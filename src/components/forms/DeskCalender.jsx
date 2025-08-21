@@ -1,7 +1,7 @@
 import React from 'react';
-import Input from "antd/es/input";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
+import NumericInput from "../UI/NumericInput";
 
 const DeskCalender = ({form, setForm, validate}) => {
 	const { Option, OptGroup } = Select
@@ -12,26 +12,26 @@ const DeskCalender = ({form, setForm, validate}) => {
 				<div className="cp-title">Подложка</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							value={form.substrate.height}
-							onChange={(e) => setForm({...form, substrate: {...form.substrate, height: e.target.value}})}
+							onChange={(val) => setForm({...form, substrate: {...form.substrate, height: val }})}
 							placeholder="Высота (мм)*"
 							status={validate && !form.substrate.height && "error"}
 						/>
 					</div>
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							placeholder="Ширина (мм)*"
 							value={form.substrate.width}
-							onChange={(e) => setForm({...form, substrate: {...form.substrate, width: e.target.value}})}
+							onChange={(val) => setForm({...form, substrate: {...form.substrate, width: val }})}
 							status={validate && !form.substrate.width && "error"}
 						/>
 					</div>
 					<div className="cp-item">
-						<Input
-							placeholder="Плотность картона*"
+						<NumericInput
+							placeholder="Плотность картона(г/м2)*"
 							value={form.substrate.paperDensity}
-							onChange={(e) => setForm({...form, substrate: {...form.substrate, paperDensity: e.target.value}})}
+							onChange={(val) => setForm({...form, substrate: {...form.substrate, paperDensity: val }})}
 							status={validate && !form.substrate.paperDensity && "error"}
 						/>
 					</div>
@@ -41,36 +41,36 @@ const DeskCalender = ({form, setForm, validate}) => {
 				<div className="cp-title">Блок</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
+						<NumericInput
 							placeholder="Кол-во листов блока*"
 							value={form.block.pagesCount}
-							onChange={(e) => setForm({...form, block: {...form.block, pagesCount: e.target.value}})}
+							onChange={(val) => setForm({...form, block: {...form.block, pagesCount: val}})}
 							status={validate && !form.block.pagesCount && "error"}
 						/>
 					</div>
 					<div className="cp-item">
-						<Input
-							placeholder="Размер листов блока (высота)*"
+						<NumericInput
+							placeholder="Размер листов блока (высота мм)*"
 							value={form.block.height}
-							onChange={(e) => setForm({...form, block: {...form.block, height: e.target.value}})}
+							onChange={(val) => setForm({...form, block: {...form.block, height: val}})}
 							status={validate && !form.block.height && "error"}
 						/>
 					</div>
 					<div className="cp-item">
-						<Input
-							placeholder="Размер листа блока (ширина)*"
+						<NumericInput
+							placeholder="Размер листа блока (ширина мм)*"
 							value={form.block.width}
-							onChange={(e) => setForm({...form, block: {...form.block, width: e.target.value}})}
+							onChange={(val) => setForm({...form, block: {...form.block, width: val}})}
 							status={validate && !form.block.width && "error"}
 						/>
 					</div>
 				</div>
 				<div className="cp-item-line">
 					<div className="cp-item">
-						<Input
-							placeholder="Плотность листов блока*"
+						<NumericInput
+							placeholder="Плотность листов блока(г/м2)*"
 							value={form.block.paperDensity}
-							onChange={(e) => setForm({...form, block: {...form.block, paperDensity: e.target.value}})}
+							onChange={(val) => setForm({...form, block: {...form.block, paperDensity: val}})}
 							status={validate && !form.block.paperDensity && "error"}
 						/>
 					</div>

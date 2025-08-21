@@ -1,11 +1,10 @@
-import React from 'react';
 import Input from "antd/es/input";
 import Button from "antd/es/button";
 import IconButton from "../../assets/icons/IconButton";
 import Upload from "antd/es/upload";
 import {message} from "antd";
 
-const Download = ({setStep, setSkipForm, files, setFiles, filesLink, setFilesLink}) => {
+const Download = ({setStep, setSkipForm, files, setFiles, filesLink, setFilesLink, fileIsUploading, setFileIsUploading}) => {
 	const props = {
 		name: 'file',
 		action: '/ajax/send/save.php',
@@ -13,8 +12,8 @@ const Download = ({setStep, setSkipForm, files, setFiles, filesLink, setFilesLin
 			authorization: 'authorization-text',
 		},
 		onChange(info) {
-			if (info.file.status !== 'uploading') {
-
+			if (info.file.status === 'uploading') {
+				setFileIsUploading(true)
 			}
 			if (info.file.status === 'done') {
 				message.success(`${info.file.name} file uploaded successfully`);
@@ -49,7 +48,9 @@ const Download = ({setStep, setSkipForm, files, setFiles, filesLink, setFilesLin
 						setSkipForm();
 						setStep(0)
 					}}><span className="mobHide">Вернуться&nbsp;</span><span>назад</span></div>
-					<Button className="with-arrow" type="primary" onClick={() => setStep(2)}>Далее<IconButton/></Button>
+					<Button disabled={fileIsUploading} className="with-arrow" type="primary" onClick={() => {
+						if (!fileIsUploading) setStep(2)
+					}}>Далее<IconButton/></Button>
 				</div>
 			</div>
 		</div>
