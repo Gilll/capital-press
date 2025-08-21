@@ -46,6 +46,9 @@
 	.ant-select-arrow {
 		inset-inline-end: 2.5rem;
 	}
+	.cp-item.phone-input input {
+		width: 100%;
+	}
 	.ant-input, .cp-item.phone-input input {
 		box-sizing: border-box;
 		font-weight: 500;
