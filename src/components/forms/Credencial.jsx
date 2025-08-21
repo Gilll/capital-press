@@ -4,8 +4,8 @@ import Button from "antd/es/button";
 import IconButton from "../../assets/icons/IconButton";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
-import InputMask from 'react-input-mask';
 import {MaskedInput} from "antd-mask-input";
+import InputMask from "react-input-mask";
 
 const Credential = ({setStep, user, setUser, request, setRequest}) => {
 	const [errUser, setErrUser] = useState(false);
@@ -123,13 +123,12 @@ const Credential = ({setStep, user, setUser, request, setRequest}) => {
 							status={checkForm && !user.entity && 'error'}
 						/>
 					</div>
-					<div className="cp-item">
-						<MaskedInput
-							mask="+7 (000) 000-00-00"
-							placeholder="контактный телефон*"
+					<div className={checkForm && !user.phone ? "cp-item phone-input hasError" : "cp-item phone-input" }>
+						<InputMask
+							mask="+7(999) 999-99-99"
 							value={user.phone}
-							onChange={(val) => setUser({...user, phone: val })}
-							status={checkForm && !user.phone && 'error'}
+							onChange={(e) => setUser({...user, phone: e.target.value})}
+							placeholder="+7(___) ___-__-__"
 						/>
 					</div>
 					<div className={checkForm && !isEmailValid(user.email) ? 'email cp-item email-format-err' : 'cp-item email'}>

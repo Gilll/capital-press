@@ -46,7 +46,7 @@
 	.ant-select-arrow {
 		inset-inline-end: 2.5rem;
 	}
-	.ant-input {
+	.ant-input, .cp-item.phone-input input {
 		box-sizing: border-box;
 		font-weight: 500;
 		font-size: 1.4rem;
@@ -59,7 +59,7 @@
 		padding: 2.4rem 2.6rem 2.2rem;
 		transition: 0.3s;
 	}
-	.ant-input.ant-input-status-error {
+	.ant-input.ant-input-status-error, .cp-item.phone-input.hasError input {
 		border-color: #FF3B4C;
 		transition: 0.3s;
 	}
@@ -776,7 +776,7 @@ body {
 		border: 0.8rem solid white;
 	}
 
-	#cp-calc .ant-input, #cp-calc textarea {
+	#cp-calc .ant-input, #cp-calc textarea, .cp-item.phone-input input {
 		border: 1px solid #47669D;
 		padding: 4.4rem 4.8rem;
 		font-size: 2.6rem;
