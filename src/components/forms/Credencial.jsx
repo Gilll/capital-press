@@ -5,6 +5,7 @@ import IconButton from "../../assets/icons/IconButton";
 import {Select} from "antd";
 import IconSelect from "../../assets/icons/IconSelect";
 import InputMask from 'react-input-mask';
+import {MaskedInput} from "antd-mask-input";
 
 const Credential = ({setStep, user, setUser, request, setRequest}) => {
 	const [errUser, setErrUser] = useState(false);
@@ -123,17 +124,11 @@ const Credential = ({setStep, user, setUser, request, setRequest}) => {
 						/>
 					</div>
 					<div className="cp-item">
-						<InputMask
-							mask="+\7 (999) 999 99 99"
-							maskChar=" "
-							value={user.phone}
-							onChange={(e) => setUser({...user, phone: e.target.value})}
-							className='phoneMask'
-						/>
-						<Input
+						<MaskedInput
+							mask="+7 (000) 000-00-00"
 							placeholder="контактный телефон*"
 							value={user.phone}
-							onChange={(e) => setUser({...user, phone: e.target.value})}
+							onChange={(val) => setUser({...user, phone: val })}
 							status={checkForm && !user.phone && 'error'}
 						/>
 					</div>
